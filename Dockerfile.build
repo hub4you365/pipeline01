@@ -3,4 +3,4 @@ FROM openjdk:8-jdk-alpine
 RUN apk update && apk upgrade && \
     apk --no-cache add curl nodejs maven make
 
-RUN curl -ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xz -C /
+RUN curl -ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar -xvf -C /
