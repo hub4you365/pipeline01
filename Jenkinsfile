@@ -1,6 +1,6 @@
 node('slave'){
   stage('check out'){
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/hub4you365/pipeline01.git']]])
+    git 'https://github.com/hub4you365/pipeline01'
   }
   stage('build docker'){
     docker.build("${BUILD_ID}", "-f Dockerfile.build .").inside() {
@@ -8,3 +8,5 @@ node('slave'){
     }
   }
 }
+
+
